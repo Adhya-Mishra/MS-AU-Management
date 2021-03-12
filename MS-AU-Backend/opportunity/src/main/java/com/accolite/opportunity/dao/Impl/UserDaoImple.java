@@ -43,7 +43,7 @@ public UserDaoImple(){}
 	@Override
 	public User findByEmail(String email) {
 		User u = null;
-		System.out.println("email in "+ email);
+		
 		try {
 			
 		u = jdbcTemplate.queryForObject("SELECT * FROM user WHERE email='"+email+"';", new UserRow());
