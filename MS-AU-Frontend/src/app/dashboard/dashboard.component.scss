@@ -1,0 +1,30 @@
+  
+.fill-space {
+   
+    flex: 1 1 auto;
+  }
+  #avatar {
+    width: 64px;
+  }
+  
+  .Active {
+    color: white;
+    text-shadow: rgb(18, 159, 224);
+    text-underline-offset: inherit;
+    font-size: 16px;
+    font-style: bold;
+  }
+  
+  .Deactive {
+    color: white;
+    text-shadow: rgb(18, 159, 224);
+    text-underline-offset: inherit;
+    font-size: 16px;
+    font-style: bold;
+  }
+  
+  span {
+    margin-right: 20px;
+  }
+  
+  

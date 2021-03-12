@@ -1,0 +1,39 @@
+
+  <mat-toolbar color="primary"> 
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with home icon">
+        <mat-icon>home</mat-icon>
+      </button>
+    <button mat-button id="search" [ngClass]="{'Active':isActive1, 'Deactive': !isActive1}"  [routerLink]="['./search']"> Search </button>
+    <button  mat-button id="opportunity" [ngClass]="{'Active':isActive2, 'Deactive': !isActive2}"  [routerLink]="['./opportunity']" > Opportunity </button>
+    <button mat-button id="trend" [ngClass]="{'Active':isActive3, 'Deactive': !isActive3}"  [routerLink]="['./trend']" > Trends</button>
+    <button mat-button id="audit" [ngClass]="{'Active':isActive4, 'Deactive': !isActive4}"  [routerLink]="['./audit']" > Audit</button>
+    
+    <span class="fill-space"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <img [src]="ImageURL" id="photo" alt="Menu">
+  </button>
+    <mat-menu #menu="matMenu">
+        <button mat-button color="white" style="width: 100%;" (click)="myProfile()">Account</button>
+        <br>
+        <button mat-button color="white" style="width: 100%;" >About Us</button>
+        <br>
+        <button mat-button  color="warn" (click)="logOut()" style="width: 100%">Log Out</button>
+    </mat-menu>
+</mat-toolbar>
+<router-outlet></router-outlet>
+<ng-template #Display  >
+  <div class="dialodC" Style="width:500px;height: 300px;">
+      <h3><b>Account Information</b></h3>
+      <button mat-button class="close-icon" [mat-dialog-close]="true" >
+        <mat-icon>close</mat-icon>
+      </button>
+      <hr>
+      <img [src]="ImageURL" id="photo" style="border-style: groove; position: absolute; width: 98px; margin-top: 13px">
+      <div style="margin-left: 131px;margin-top: 17px;">
+          <h3>User ID: {{ User.UserId }}</h3>
+          <h3>Name: {{ User.UserName }}</h3>
+          <h3>Email: {{User.UserEmail }}</h3>
+
+      </div>
+  </div>
+</ng-template>
